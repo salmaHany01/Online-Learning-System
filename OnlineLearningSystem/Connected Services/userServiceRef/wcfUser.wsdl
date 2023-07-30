@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="wcfUser" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:61045/wcfUser.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:61045/wcfUser.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:61045/wcfUser.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/userService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IwcfUser_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_ViewCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCourses" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_ViewCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_ViewCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCart" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_ViewCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_delete_item_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_item" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_delete_item_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_itemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_save_to_cart_InputMessage">
+    <wsdl:part name="parameters" element="tns:save_to_cart" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_save_to_cart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:save_to_cartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_isValidCreditCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:isValidCreditCard" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_isValidCreditCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isValidCreditCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_getEnrollmentDate_pattern_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEnrollmentDate_pattern" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_getEnrollmentDate_pattern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEnrollmentDate_patternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_action_to_validCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:action_to_validCard" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_action_to_validCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:action_to_validCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_GetUserIdFromToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromToken" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_GetUserIdFromToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_GetCourseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseById" />
+  </wsdl:message>
+  <wsdl:message name="IwcfUser_GetCourseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IwcfUser">
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/RegisterUser" message="tns:IwcfUser_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/RegisterUserResponse" message="tns:IwcfUser_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/LoginUser" message="tns:IwcfUser_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/LoginUserResponse" message="tns:IwcfUser_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/ViewCourses" message="tns:IwcfUser_ViewCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/ViewCoursesResponse" message="tns:IwcfUser_ViewCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/ViewCart" message="tns:IwcfUser_ViewCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/ViewCartResponse" message="tns:IwcfUser_ViewCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_item">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/delete_item" message="tns:IwcfUser_delete_item_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/delete_itemResponse" message="tns:IwcfUser_delete_item_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="save_to_cart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/save_to_cart" message="tns:IwcfUser_save_to_cart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/save_to_cartResponse" message="tns:IwcfUser_save_to_cart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidCreditCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/isValidCreditCard" message="tns:IwcfUser_isValidCreditCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/isValidCreditCardResponse" message="tns:IwcfUser_isValidCreditCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEnrollmentDate_pattern">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/getEnrollmentDate_pattern" message="tns:IwcfUser_getEnrollmentDate_pattern_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/getEnrollmentDate_patternResponse" message="tns:IwcfUser_getEnrollmentDate_pattern_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="action_to_validCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/action_to_validCard" message="tns:IwcfUser_action_to_validCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/action_to_validCardResponse" message="tns:IwcfUser_action_to_validCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/GetUserIdFromToken" message="tns:IwcfUser_GetUserIdFromToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/GetUserIdFromTokenResponse" message="tns:IwcfUser_GetUserIdFromToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwcfUser/GetCourseById" message="tns:IwcfUser_GetCourseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwcfUser/GetCourseByIdResponse" message="tns:IwcfUser_GetCourseById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IwcfUser" type="tns:IwcfUser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCourses">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/ViewCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewCart">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/ViewCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_item">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/delete_item" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_to_cart">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/save_to_cart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidCreditCard">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/isValidCreditCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnrollmentDate_pattern">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/getEnrollmentDate_pattern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="action_to_validCard">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/action_to_validCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromToken">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/GetUserIdFromToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseById">
+      <soap:operation soapAction="http://tempuri.org/IwcfUser/GetCourseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wcfUser">
+    <wsdl:port name="BasicHttpBinding_IwcfUser" binding="tns:BasicHttpBinding_IwcfUser">
+      <soap:address location="http://localhost:61045/wcfUser.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
